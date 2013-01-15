@@ -48,7 +48,7 @@ describe User do
 			addresses.each do |invalid_address|
 				@user.email = invalid_address
 				@user.should_not be_valid
-			end      
+			end
 		end
 	end
 
@@ -58,7 +58,7 @@ describe User do
 			addresses.each do |valid_address|
 				@user.email = valid_address
 				@user.should be_valid
-			end      
+			end
 		end
 	end
 
@@ -102,12 +102,11 @@ describe User do
 
 		describe "with invalid password" do
 			let(:user_for_invalid_password) { found_user.authenticate("invalid") }
-			
+
 			it { should_not == user_for_invalid_password }
 			specify { user_for_invalid_password.should be_false }
 		end
 	end
-
 
 
 end
